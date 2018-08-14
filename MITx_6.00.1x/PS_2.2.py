@@ -4,8 +4,8 @@
 
 
 # Test Case 2:
-balance = 4773
-annualInterestRate = 0.2
+# balance = 4773
+# annualInterestRate = 0.2
 
 # Test Case 3:
 # balance = 3926
