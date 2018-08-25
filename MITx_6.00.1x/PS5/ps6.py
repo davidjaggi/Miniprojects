@@ -157,6 +157,7 @@ class PlaintextMessage(Message):
         '''
         Message.__init__(self,text)
         self.shift = shift
+        self.encrypting_dict = super(PlaintextMessage, self).build_shift_dict(shift)
 
     def get_shift(self):
         '''
@@ -249,6 +250,7 @@ class CiphertextMessage(Message):
 #Example test case (PlaintextMessage)
 plaintext = PlaintextMessage('hello', 2)
 print('Expected Output: jgnnq')
+print(str(plaintext.get_encrypting_dict()))
 print('Actual Output:', plaintext.get_message_text_encrypted())
     
 #Example test case (CiphertextMessage)

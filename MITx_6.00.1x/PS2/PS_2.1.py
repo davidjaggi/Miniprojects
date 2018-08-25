@@ -4,9 +4,9 @@
 # monthlyPaymentRate = 0.04
 
 # Test Case 2
-# balance = 484
-# annualInterestRate = 0.2
-# monthlyPaymentRate = 0.04
+balance = 484
+annualInterestRate = 0.2
+monthlyPaymentRate = 0.04
 
 
 month = 0
@@ -20,4 +20,4 @@ while month < 12:
     balance = unpaidBalance + (monthlyInterestRate * unpaidBalance)
     month += 1
 
-print(f'Remaining balance: {round(balance,2)}')
+print('Remaining balance: '+str(round(balance,2)))

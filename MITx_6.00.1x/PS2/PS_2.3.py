@@ -32,4 +32,4 @@ while abs(balance) >= epsilon:
     minimumPayment = (upperBound + lowerBound) / 2.0
 
 minimumPayment = round(minimumPayment,2)
-print(f'Lowest Payment: {minimumPayment}')
+print('Lowest Payment: '+str(minimumPayment))

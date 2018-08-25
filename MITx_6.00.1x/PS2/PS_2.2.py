@@ -29,4 +29,4 @@ while calculator(month,balance,minimumPayment,monthlyInterestRate) > 0:
     month = 0
     calculator(month,balance,minimumPayment,monthlyInterestRate)
 
-print(f'Lowest Payment: {minimumPayment}')
+print('Lowest Payment: ' + str(minimumPayment))

@@ -224,18 +224,19 @@ def playHand(hand, wordList, n):
     """
     score = 0
     while calculateHandlen(hand) > 0:
-        print(f'Current Hand: {str(displayHand(hand))}')
+        print('Current Hand: ',end = ' '),
+        displayHand(hand)
         word = str(input('Enter word, or a "." to indicate that you are finished: '))
         if word == ".":
-            print(f'Goodbye! Total Score: {str(score)} points.')
+            print('Goodbye! Total Score: '+str(score)+' points.')
             return
         if isValidWord(word,hand,wordList):
             score += getWordScore(word,n)
             hand = updateHand(hand,word)
-            print(f'"{word}" earned {str(getWordScore(word,n))} points. Total: {str(score)}')
+            print('" '+str(word) +' " earned '+str(getWordScore(word,n))+" points. Total: "+str(score)+" points.")
         else:
-            print(f'That is nor a valid word. Please choose another word')
-    print(f'Run out of letters. Total score: {str(score)} points.')
+            print('That is not a valid word. Please choose another word')
+    print('Run out of letters. Total score: '+ str(score) +' points.')
 
 #
 # Problem #5: Playing a game
@@ -280,5 +281,6 @@ def playGame(wordList):
 #
 if __name__ == '__main__':
     wordList = loadWords()
+    # playHand({'h':1, 'i':1, 'c':1, 'z':1, 'm':2, 'a':1}, wordList, 7)
     playGame(wordList)
     

@@ -44,14 +44,14 @@ def hangman(secretWord):
     Follows the other limitations detailed in the problem write-up.
     '''
     print('Welcome to the game, Hangman!')
-    print(f'I am thinking of a word that is {len(secretWord)} letters long.')
+    print('I am thinking of a word that is '+str(len(secretWord))+' letters long.')
     print('-------------')
 
     guessesLeft = 8
     lettersGuessed = []
     while guessesLeft > 0 and not isWordGuessed(secretWord, lettersGuessed):
-        print(f'You have {guessesLeft} guesses left.')
-        print(f'Available letters: {getAvailableLetters(lettersGuessed)}')
+        print('You have '+str(guessesLeft)+' guesses left.')
+        print('Available letters: '+str(getAvailableLetters(lettersGuessed)))
         guess = str(input('Please guess a letter: '))
         guess = guess.lower()
         while len(guess) != 1 and guess not in string.ascii_lowercase:
@@ -60,17 +60,17 @@ def hangman(secretWord):
         if guess not in lettersGuessed:
             lettersGuessed.append(guess)
             if guess in secretWord:
-                print(f'Good guess: {getGuessedWord(secretWord,lettersGuessed)}')
+                print('Good guess: '+str(getGuessedWord(secretWord,lettersGuessed)))
             else:
                 guessesLeft -=1
-                print(f'Oops! That letter is not in my word: {getGuessedWord(secretWord,lettersGuessed)}')
+                print('Oops! That letter is not in my word: '+str(getGuessedWord(secretWord,lettersGuessed)))
         else:
-            print(f"Oops! You've already guessed that letter: {getGuessedWord(secretWord,lettersGuessed)}")
+            print("Oops! You've already guessed that letter: "+str(getGuessedWord(secretWord,lettersGuessed)))
         print('------------')
     if isWordGuessed(secretWord,lettersGuessed):
         print('Congratulations, you won!')
     else:
-        print(f'Sorry, you ran out of guesses. The word was {str(secretWord)}.')
+        print('Sorry, you ran out of guesses. The word was '+str(secretWord)+'.')
 
 hangman('else')
 
